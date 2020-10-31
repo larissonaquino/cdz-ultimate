@@ -1,0 +1,17 @@
+<div *ngIf="!paidFor">
+
+  <h1>Buy this Cloth Myth - ${{ product.price }}</h1>
+
+  <p>{{ product.description }}</p>
+
+  <img width="400" [src]="product.img">
+
+</div>
+
+<div *ngIf=paidFor>
+  <h1>Yay, you bought a sweet cloth!</h1>
+
+  <img src="assets/giphy.gif">
+</div>
+
+<div [hidden]="paidFor" #paypal></div>
