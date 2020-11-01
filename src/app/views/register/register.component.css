@@ -1,0 +1,43 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(120, 122, 124, 0.2);
+}
+
+.register .title {
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 1.85rem;
+    text-align: center;
+}
+
+.register .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register .form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    max-width: 500px;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.register .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.register .buttons button {
+    margin: 10px 10px 10px 0px;
+    width: 100%;
+    padding: 0px;
+}
+
+.register .buttons .cancel {
+    margin-right: 0px;
+}

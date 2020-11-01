@@ -1,9 +1,26 @@
-<p>register works!</p>
+<mat-card class="register mat-elevation-z3">
+  <mat-card-title class="title">Registre-se</mat-card-title>
+  <mat-card-content class="form">
+    <input matInput type="text" placeholder="nome">
+    <input matInput type="text" placeholder="sobrenome">
+    <input matInput type="text" placeholder="e-mail">
+    <input matInput type="password" placeholder="senha">
+    <input matInput type="confirm-password" placeholder="confirmar senha">
 
-<button mat-raised-button (click)="createAccount()" color="primary">
-    Salvar
-</button>
+    <div class="buttons">
+      <button mat-flat-button (click)="createAccount()" color="primary">
+        <i class="material-icons">
+          arrow_forward_ios
+        </i>
+        Salvar
+      </button>
 
-<button mat-raised-button (click)="cancel()">
-    Cancelar
-</button>
+      <button class="cancel" mat-flat-button (click)="cancel()" color="primary">
+        <i class="material-icons">
+          cancel
+        </i>
+        Cancelar
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

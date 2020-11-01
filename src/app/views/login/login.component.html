@@ -1,6 +1,28 @@
 <mat-card class="login mat-elevation-z3">
   <mat-card-title class="title">Login</mat-card-title>
-  <mat-card-content>
+  <mat-card-content class="form">
+    <input matInput type="text" placeholder="e-mail">
+    <input matInput type="password" placeholder="senha">
 
+    <div class="buttons">
+      <button mat-flat-button color="primary">
+        Log in
+        <i class="material-icons">
+          login
+        </i>
+      </button>
+    </div>
+
+    <span class="register">
+      <a routerLink="/register">
+        Náo tem uma conta? Registre-se
+      </a>
+    </span>
+
+    <span class="register">
+      <a routerLink="/">
+        Esqueci minha senha
+      </a>
+    </span>
   </mat-card-content>
 </mat-card>

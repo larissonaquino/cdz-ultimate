@@ -1,0 +1,53 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(120, 122, 124, 0.2);
+}
+
+.login .title {
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-size: 1.85rem;
+}
+
+.login .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login .form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    max-width: 500px;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.login .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.login .buttons button {
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+    padding: 0px;
+}
+
+.login .register {
+    font-weight: 25;
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+
+.login .register a {
+    text-decoration: none;
+}
+
+.login .register a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgba(26, 44, 199, 0.2);
+}
