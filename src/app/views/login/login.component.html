@@ -1,8 +1,15 @@
 <mat-card class="login mat-elevation-z3">
   <mat-card-title class="title">Login</mat-card-title>
-  <mat-card-content class="form">
-    <input matInput type="text" placeholder="e-mail">
-    <input matInput type="password" placeholder="senha">
+  <mat-card-content>
+    <form>
+      <mat-form-field>
+        <input matInput type="text" placeholder="e-mail">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput type="password" placeholder="senha">
+      </mat-form-field>
+    </form>
 
     <div class="buttons">
       <button mat-flat-button color="primary">
@@ -13,16 +20,18 @@
       </button>
     </div>
 
-    <span class="register">
-      <a routerLink="/register">
-        Náo tem uma conta? Registre-se
-      </a>
-    </span>
+    <div class="redirections">
+      <span class="register">
+        <a routerLink="/register">
+          Náo tem uma conta? Registre-se
+        </a>
+      </span>
 
-    <span class="register">
-      <a routerLink="/">
-        Esqueci minha senha
-      </a>
-    </span>
+      <span class="register">
+        <a routerLink="/">
+          Esqueci minha senha
+        </a>
+      </span>
+    </div>
   </mat-card-content>
 </mat-card>
