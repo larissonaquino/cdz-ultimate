@@ -14,16 +14,17 @@ export class UserService {
   constructor(private http: HttpClient, 
     private snackBar: MatSnackBar) { }
 
-  showMessage(msg: string, action: string): void {
+  showMessage(msg: string, action: string, type: string): void {
     this.snackBar.open(msg, action, {
       duration: 3000,
       horizontalPosition: 'right',
-      verticalPosition: 'top'
+      verticalPosition: 'top',
+      panelClass: [`msg-${type}`]
     })
   }
 
   create(player: Player): Observable<Player> {
-    return this.http.post<Player>(this.baseUrl, player);
+    return this.http.post<Player>(this.baseUrl, player)
   }
   
   read(player: Player): Observable<Player> {

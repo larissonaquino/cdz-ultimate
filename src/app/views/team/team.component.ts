@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from 'src/app/components/services/header.service';
 
 @Component({
   selector: 'app-team',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  constructor(private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Equipe',
+      icon: 'people',
+      routeUrl: '/team'
+    }
+   }
 
   ngOnInit(): void {
   }
