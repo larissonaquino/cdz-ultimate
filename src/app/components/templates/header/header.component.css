@@ -1,22 +1,26 @@
 .header {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .header .logo {
-    max-height: 32px;
+  max-height: 32px;
 }
 
 .header .title-group {
-    padding-left: 25px;
+  padding-left: 25px;
+}
+
+.header .title-group .login {
+    margin-right: 20px;
 }
 
 .header .title-group i {
-    padding-right: 5px;
+  padding-right: 5px;
 }
+

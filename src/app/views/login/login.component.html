@@ -1,18 +1,20 @@
 <mat-card class="login mat-elevation-z3">
   <mat-card-title class="title">Login</mat-card-title>
   <mat-card-content>
-    <form>
+    <form [formGroup]="myForm">
       <mat-form-field>
-        <input matInput type="text" placeholder="e-mail">
+        <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" 
+          [(ngModel)]="player.email" required>
       </mat-form-field>
 
       <mat-form-field>
-        <input matInput type="password" placeholder="senha">
+        <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
+          [(ngModel)]="player.password" required>
       </mat-form-field>
     </form>
 
     <div class="buttons">
-      <button (click)="read()" mat-flat-button color="primary">
+      <button (click)="login()" mat-flat-button color="primary">
         Log in
         <i class="material-icons">
           login

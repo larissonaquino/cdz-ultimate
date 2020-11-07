@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HeaderService } from 'src/app/components/services/header.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from './../../models/player.model';
+import { HeaderService } from 'src/app/components/services/header.service';
 
 @Component({
   selector: 'app-login',
@@ -11,27 +12,45 @@ import { Player } from './../../models/player.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  myForm: FormGroup;
+
   player: Player = {
-    name: 'Lárisson A',
-    email: 'larissonaquino@gmail.com'
+    email: '',
+    password: ''
   }
 
   constructor(private UserService: UserService,
     private router: Router,
     private headerService: HeaderService) {
-      headerService.headerData = {
-        title: 'Login',
-        icon: 'login',
-        routeUrl: '/login'
-      }
+
+    headerService.headerData = {
+      title: 'Login',
+      icon: 'login',
+      routeUrl: '/login'
+    }
+
+    this.myForm = new FormGroup({
+      emailFormControl: new FormControl('', [
+        Validators.required,
+        Validators.email,
+      ]),
+      passwordFormControl: new FormControl('', [
+        Validators.required
+      ])
+    });
   }
 
   ngOnInit(): void { }
 
-  read(): void {
-    this.UserService.read(this.player).subscribe(() => {
+  login(): void {
+    console.log(this.player)
+    this.UserService.login(this.player).subscribe((response) => {
       this.UserService.showMessage('Logado com sucesso!', 'X', 'success')
-    }, error => this.UserService.showMessage('Erro ao fazer log in, tente novamente', 'ERRO', 'error'))
+      console.log(response)
+      this.router.navigate(['/'])
+    }, error => {
+      if (error.status === 401) this.UserService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
+    })
   }
 
   navigateToAccountCreate(): void {

@@ -23,11 +23,11 @@ export class UserService {
     })
   }
 
-  create(player: Player): Observable<Player> {
-    return this.http.post<Player>(this.baseUrl, player)
+  create(player: any): Observable<Player> {
+    return this.http.post<Player>(`${this.baseUrl}/register`, player)
   }
   
-  read(player: Player): Observable<Player> {
-    return this.http.get<Player>(this.baseUrl)
+  login(player: Player): Observable<Player> {
+    return this.http.post<Player>(`${this.baseUrl}/login`, player)
   }
 }
