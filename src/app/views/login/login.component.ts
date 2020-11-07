@@ -46,7 +46,6 @@ export class LoginComponent implements OnInit {
     console.log(this.player)
     this.UserService.login(this.player).subscribe((response) => {
       this.UserService.showMessage('Logado com sucesso!', 'X', 'success')
-      console.log(response)
       this.router.navigate(['/'])
     }, error => {
       if (error.status === 401) this.UserService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
