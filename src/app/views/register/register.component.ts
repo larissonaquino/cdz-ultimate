@@ -1,5 +1,5 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/app/components/services/user.service';
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   confirmPassword: String = ''
 
-  constructor(private UserService: UserService,
+  constructor(private userService: UserService,
     private router: Router,
     private headerService: HeaderService) {
 
@@ -57,21 +57,39 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void { }
 
+  validateForm(): Boolean {
+    let isInvalid: Boolean = false
+    let isPasswordsDifferent: Boolean = false
+
+    console.log('validateForm')
+
+    if (this.player.name == null || this.player.name === '') isInvalid = true
+    if (this.player.email == null || this.player.email === '') isInvalid = true
+    if (this.player.password == null || this.player.password === '') isInvalid = true
+
+    if (this.player.password !== this.confirmPassword) isPasswordsDifferent = true
+
+    if (isInvalid) 
+      this.userService.showMessage('Preencha todos os campos obrigatórios!', 'X', 'error')
+      
+    if (isPasswordsDifferent)
+      this.userService.showMessage('Senha inválida', 'X', 'error')
+
+    return !isInvalid && !isPasswordsDifferent
+  }
+
   createAccount(e: any): void {
     e.preventDefault();
 
-    if (this.player.password !== this.confirmPassword) {
-      this.UserService.showMessage('Senha inválida', 'X', 'error')
-      return
+    if (this.validateForm()) {
+      this.userService.create(this.player).subscribe((user) => {
+        this.userService.showMessage('Conta criada com sucesso!', 'X', 'success')
+        this.router.navigate(['/login'])
+      }, error => {
+        if (error.status === 422) this.userService.showMessage('E-mail já cadastrado', 'ERRO', 'error')
+        if (error.status === 500) this.userService.showMessage('Erro ao cadastrar', 'ERRO', 'error')
+      })
     }
-
-    this.UserService.create(this.player).subscribe((user) => {
-      this.UserService.showMessage('Conta criada com sucesso!', 'X', 'success')
-      this.router.navigate(['/login'])
-    }, error => {
-      if (error.status === 422) this.UserService.showMessage('E-mail já cadastrado', 'ERRO', 'error')
-      if (error.status === 500) this.UserService.showMessage('Erro ao cadastrar', 'ERRO', 'error')
-    })
   }
 
   cancel(e: any): void {

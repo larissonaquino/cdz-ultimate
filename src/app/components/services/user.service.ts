@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
@@ -27,7 +27,22 @@ export class UserService {
     return this.http.post<Player>(`${this.baseUrl}/register`, player)
   }
   
-  login(player: Player): Observable<Player> {
+  login(player: Player): Observable<any> {
     return this.http.post<Player>(`${this.baseUrl}/login`, player)
+  }
+
+  getUserByEmail(email: string): Observable<Player> {
+    return this.http.get<Player>(`${this.baseUrl}/userByEmail`, { params: { email } })
+  }
+
+  authorization(token: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
+      })
+    }
+
+    return this.http.post<any>(`${this.baseUrl}/authorization`, null, httpOptions)
   }
 }

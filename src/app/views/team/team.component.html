@@ -7,115 +7,15 @@
   </mat-card>
 
   <div class="list">
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
+    <mat-card *ngFor="let member of team" class="team mat-elevation-z3">
+      <mat-card-title class="title">{{member.username}}</mat-card-title>
       <mat-card-subtitle class="subtitle">
-        Programador
+        {{ member.job }}
       </mat-card-subtitle>
       <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
+        src="../../assets/{{ member.image }}">
       <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card class="team mat-elevation-z3">
-      <mat-card-title class="title">cheq</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        Programador
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="https://cdn.discordapp.com/avatars/339273010999459842/13c37ccc73565b8850c8c40263f44042.webp" alt="avatar">
-      <mat-card-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book.
+        {{ member.description }}
       </mat-card-content>
     </mat-card>
   </div>

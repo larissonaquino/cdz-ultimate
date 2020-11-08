@@ -43,16 +43,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   login(): void {
-    console.log(this.player)
     this.UserService.login(this.player).subscribe((response) => {
       this.UserService.showMessage('Logado com sucesso!', 'X', 'success')
-      this.router.navigate(['/'])
+      localStorage.setItem('token', response.token)
+      this.router.navigate(['/profile'])
     }, error => {
       if (error.status === 401) this.UserService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
     })
-  }
-
-  navigateToAccountCreate(): void {
-    this.router.navigate(['/register'])
   }
 }

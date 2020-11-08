@@ -24,3 +24,6 @@
   padding-right: 5px;
 }
 
+.header .invisible {
+  visibility: hidden;
+}
