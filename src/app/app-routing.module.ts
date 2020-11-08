@@ -6,6 +6,7 @@ import { TeamComponent } from './views/team/team.component';
 import { DonateComponent } from './views/donate/donate.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { ProfileComponent } from './views/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   }
 ];
 

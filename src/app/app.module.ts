@@ -27,6 +27,8 @@ import { RegisterComponent } from './views/register/register.component';
 import { PaypalComponent } from './components/paypal/paypal.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './views/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     DonateComponent,
     LoginComponent,
     RegisterComponent,
-    PaypalComponent
+    PaypalComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
