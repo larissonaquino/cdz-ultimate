@@ -1,10 +1,15 @@
 .sidenav {
-    background-color: #3F51B5;
+    background-color: #e8e8e8;
     width: 200px;
 }
 
 .sidenav a {
-    color: #FFF;
+    color: #30475e;
+}
+
+.sidenav a:hover {
+    background-color: #f05454;
+    color: #222831;
 }
 
 .sidenav i {
@@ -18,4 +23,8 @@
 
 .container {
     margin-top: 9px;
+}
+
+.content {
+    background-color: #e8e8e8;
 }

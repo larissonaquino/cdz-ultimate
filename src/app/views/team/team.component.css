@@ -1,12 +1,12 @@
+.team mat-card {
+    min-width: 190px;
+    background-color: #e8e8e8;
+}
+
 .team .title {
     font-size: 2rem;
     font-weight: 300;
     line-height: 1.2;
-    text-align: center;
-}
-
-.team .subtitle {
-    font-size: 1.1rem;
     text-align: center;
 }
 
@@ -25,10 +25,6 @@
     grid-template-columns: repeat(5, 36%);
     grid-template-rows: repeat(2, 2fr);
     max-width: 700px;
-}
-
-.team mat-card {
-    min-width: 190px;
 }
 
 .team .list mat-card {
