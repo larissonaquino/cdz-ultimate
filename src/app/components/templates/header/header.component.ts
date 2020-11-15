@@ -1,3 +1,4 @@
+import { UserService } from 'src/app/components/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './../../services/header.service';
 
@@ -8,9 +9,13 @@ import { HeaderService } from './../../services/header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) { }
+  isLogged: Boolean
+
+  constructor(private headerService: HeaderService,
+    private userService: UserService) { }
 
   ngOnInit(): void {
+    this.isLogged = this.userService.logged
   }
 
   get title(): string {
@@ -23,5 +28,13 @@ export class HeaderComponent implements OnInit {
 
   get routeUrl(): string {
     return this.headerService.headerData.routeUrl
+  }
+
+  get logged(): Boolean {
+    return this.isLogged
+  }
+
+  set logged(value: Boolean) {
+    this.isLogged = value
   }
 }

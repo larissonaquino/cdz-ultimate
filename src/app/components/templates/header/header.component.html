@@ -15,12 +15,21 @@
       </a>
     </span>
   </div>
-  <span class="title-group">
-    <a routerLink="/login" class="login">
+  <span *ngIf="!isLogged" class="title-group">
+    <a routerLink="/login" class="last">
       <i class="material-icons">
         login
       </i>
       Login
+    </a>
+  </span>
+  <span *ngIf="isLogged" class="title-group">
+    <a routerLink="/profile" class="last profile">
+      <button mat-icon-button color="primary">
+        <i class="material-icons">
+          settings
+        </i>
+      </button>
     </a>
   </span>
 </mat-toolbar>

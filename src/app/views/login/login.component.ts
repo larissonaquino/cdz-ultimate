@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from './../../models/player.model';
 import { HeaderService } from 'src/app/components/services/header.service';
+import { AuthTokenService } from 'src/app/components/services/auth-token.service';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,10 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  constructor(private UserService: UserService,
+  constructor(private userService: UserService,
     private router: Router,
-    private headerService: HeaderService) {
+    private headerService: HeaderService,
+    private authTokenService: AuthTokenService) {
 
     headerService.headerData = {
       title: 'Login',
@@ -40,15 +42,27 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    const token = this.authTokenService.getToken()
+
+    if (token == null || token == '') return
+
+    this.userService.authorization(token).subscribe(res => {
+      this.userService.showMessage('Você já está logado!', 'ERRO', 'error')
+      this.router.navigate(['/'])
+    }, error => localStorage.setItem('token', ''))
+  }
 
   login(): void {
-    this.UserService.login(this.player).subscribe((response) => {
-      this.UserService.showMessage('Logado com sucesso!', 'X', 'success')
+    this.userService.login(this.player).subscribe(response => {
+      this.userService.showMessage('Logado com sucesso!', 'X', 'success')
+
+      this.userService.logged = true
+
       localStorage.setItem('token', response.token)
-      this.router.navigate(['/profile'])
+      this.router.navigate(['/'])
     }, error => {
-      if (error.status === 401) this.UserService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
+      if (error.status === 401) this.userService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
     })
   }
 }

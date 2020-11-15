@@ -51,20 +51,16 @@ export class ProfileComponent implements OnInit {
       confirmPasswordFormControl: new FormControl('', [
         Validators.required
       ])
-    });
+    })
   }
 
   ngOnInit(): void {
     const token = this.authTokenService.getToken()
     this.userService.authorization(token).subscribe(auth => {
-      console.log(auth)
+      this.player = this.authTokenService.decodePayloadJWT()
     }, error => {
-      this.router.navigate(['/'])
-    })
-
-    const { email } = this.authTokenService.decodePayloadJWT()
-    this.userService.getUserByEmail(email).subscribe(user => {
-      this.player = user
+      if (error.status = 403) this.userService.showMessage('Você não está logado, entre com sua conta', 'ERRO', 'error')
+      this.router.navigate(['/login'])
     })
   }
 

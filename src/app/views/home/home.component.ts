@@ -1,5 +1,7 @@
+import { UserService } from 'src/app/components/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './../../components/services/header.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,9 +16,7 @@ export class HomeComponent implements OnInit {
       icon: 'home',
       routeUrl: '/'
     }
-   }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void { }
 }

@@ -37,7 +37,7 @@
   margin-left: 25px;
 }
 
-.header .title-group .login {
+.header .title-group .last {
     margin-right: 20px;
 }
 
@@ -48,4 +48,14 @@
 
 .header .invisible {
   visibility: hidden;
+}
+
+.header .profile {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.header .profile button i {
+  margin-left: 5px;
+  color: #f05454;
 }
