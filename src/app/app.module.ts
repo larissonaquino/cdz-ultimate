@@ -29,8 +29,8 @@ import { PaypalComponent } from './components/paypal/paypal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './views/profile/profile.component';
-import { RulesComponent } from './views/rules/rules/rules.component';
-import { ClassesComponent } from './views/classes/classes/classes.component';
+import { RulesComponent } from './views/rules/rules.component';
+import { ClassesComponent } from './views/classes/classes.component';
 
 @NgModule({
   declarations: [
