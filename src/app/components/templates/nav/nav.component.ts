@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  topGap = 570
 
-  ngOnInit(): void {
+  constructor() {
+    document.addEventListener('scroll', () => {
+      this.topGap = Math.max(0, 570 - document.body.parentElement.scrollTop);
+    })
   }
+
+  ngOnInit(): void { }
 
 }
