@@ -1,0 +1,45 @@
+.classes {
+    display: grid;
+    grid-template-columns: 5fr;
+    grid-template-rows: 5fr;
+}
+
+mat-card {
+    margin-top: 20px;
+    background-color: #e8e8e8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+mat-card-title {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+}
+
+mat-card-subtitle {
+    font-size: 1.1rem;
+    color: #30475e;
+}
+
+mat-card-content {
+    color: #30475e;
+    text-align: left;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(5, 36%);
+    grid-template-rows: repeat(2, 2fr);
+    max-width: 700px;
+}
+
+.list mat-card {
+    width: 190px;
+}
+
+.list mat-card img {
+    width: 222px;
+    height: 233px;;
+}
