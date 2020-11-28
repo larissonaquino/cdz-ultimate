@@ -1,6 +1,22 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+}
+
+.links {
+    margin-left: 20px;
+    position: relative;
+}
+
 mat-card {
     background-color: #e8e8e8;
-    margin-top: 20px;
+    
 }
 
 .home .title {
