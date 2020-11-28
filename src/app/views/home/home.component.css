@@ -1,11 +1,11 @@
 mat-card {
-    margin-top: 20px;
     background-color: #e8e8e8;
+    margin-top: 20px;
 }
 
 .home .title {
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 1.7rem;
+    font-weight: 500;
     line-height: 1.2;
     color: #222831;
 }
@@ -17,6 +17,8 @@ mat-card {
 
 .home mat-card-content {
     color: #30475e;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
 }
 
 .home {

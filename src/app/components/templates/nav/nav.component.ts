@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  topGap = 570
+  percentage = 0.85
+  topGap = (window.innerHeight * this.percentage) + 70
 
   constructor() {
     document.addEventListener('scroll', () => {
-      this.topGap = Math.max(0, 570 - document.body.parentElement.scrollTop);
+      this.topGap = Math.max(0, ((window.innerHeight * this.percentage) + 70) - document.body.parentElement.scrollTop);
     })
   }
 
