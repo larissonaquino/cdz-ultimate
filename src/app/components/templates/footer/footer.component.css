@@ -3,9 +3,11 @@
     bottom: 0;
     display: flex;
     justify-content: flex-end;
+    background-color: #222831;
 }
 
 .footer > span {
     font-size: 1.0rem;
-    font-weight: 300;
+    font-weight: 200;
+    color: #f05454;
 }
