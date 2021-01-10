@@ -9,12 +9,6 @@
       </mat-form-field>
 
       <mat-form-field class="form-field">
-        <mat-label>Sobrenome</mat-label>
-        <input formControlName="lastNameFormControl" matInput type="text" placeholder="sobrenome"
-          [(ngModel)]="player.lastName">
-      </mat-form-field>
-
-      <mat-form-field class="form-field">
         <mat-label>E-mail</mat-label>
         <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" [(ngModel)]="player.email"
           required>
@@ -23,7 +17,7 @@
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
         <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
-          [(ngModel)]="player.password">
+          [(ngModel)]="player.passwd">
       </mat-form-field>
     </form>
 

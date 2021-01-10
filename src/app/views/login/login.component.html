@@ -9,7 +9,7 @@
 
       <mat-form-field>
         <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
-          [(ngModel)]="player.password" required>
+          [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
       </mat-form-field>
     </form>
 

@@ -8,6 +8,10 @@
 
 .footer > span {
     font-size: 1.0rem;
-    font-weight: 200;
+    font-weight: 300;
     color: #f05454;
+}
+
+.footer > span > strong {
+    font-weight: 550;
 }

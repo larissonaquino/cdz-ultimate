@@ -1,4 +1,3 @@
-import { UserService } from 'src/app/components/services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from './../../services/header.service';
 
@@ -9,13 +8,12 @@ import { HeaderService } from './../../services/header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isLogged: Boolean
+  isLogged: boolean = false
 
-  constructor(private headerService: HeaderService,
-    private userService: UserService) { }
+  constructor(private headerService: HeaderService) { }
 
   ngOnInit(): void {
-    this.isLogged = this.userService.logged
+    this.isLogged = this.headerService.headerData.logged
   }
 
   get title(): string {
@@ -30,11 +28,11 @@ export class HeaderComponent implements OnInit {
     return this.headerService.headerData.routeUrl
   }
 
-  get logged(): Boolean {
-    return this.isLogged
+  get logged(): boolean {
+    return this.headerService.headerData.logged
   }
 
-  set logged(value: Boolean) {
+  set logged(value: boolean) {
     this.isLogged = value
   }
 }

@@ -17,8 +17,7 @@ export class RegisterComponent implements OnInit {
   player: Player = {
     name: '',
     email: '',
-    lastName: '',
-    password: ''
+    passwd: ''
   }
 
   confirmPassword: String = ''
@@ -30,7 +29,8 @@ export class RegisterComponent implements OnInit {
     headerService.headerData = {
       title: 'Registre-se',
       icon: 'person_add',
-      routeUrl: '/register'
+      routeUrl: '/register',
+      logged: headerService.headerData.logged
     }
 
     this.myForm = new FormGroup({
@@ -65,9 +65,9 @@ export class RegisterComponent implements OnInit {
 
     if (this.player.name == null || this.player.name === '') isInvalid = true
     if (this.player.email == null || this.player.email === '') isInvalid = true
-    if (this.player.password == null || this.player.password === '') isInvalid = true
+    if (this.player.passwd == null || this.player.passwd === '') isInvalid = true
 
-    if (this.player.password !== this.confirmPassword) isPasswordsDifferent = true
+    if (this.player.passwd !== this.confirmPassword) isPasswordsDifferent = true
 
     if (isInvalid) 
       this.userService.showMessage('Preencha todos os campos obrigatórios!', 'X', 'error')

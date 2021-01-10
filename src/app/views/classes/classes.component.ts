@@ -12,11 +12,11 @@ export class ClassesComponent implements OnInit {
     headerService.headerData = {
       title: 'Classes',
       icon: 'compare',
-      routeUrl: '/classes'
+      routeUrl: '/classes',
+      logged: headerService.headerData.logged
     }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

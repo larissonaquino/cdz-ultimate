@@ -17,8 +17,7 @@ export class ProfileComponent implements OnInit {
   player: Player = {
     name: '',
     email: '',
-    lastName: '',
-    password: ''
+    passwd: ''
   }
 
   constructor(private userService: UserService,
@@ -29,7 +28,8 @@ export class ProfileComponent implements OnInit {
     headerService.headerData = {
       title: 'Perfil',
       icon: 'person',
-      routeUrl: '/'
+      routeUrl: '/',
+      logged: headerService.headerData.logged
     }
 
     this.myForm = new FormGroup({

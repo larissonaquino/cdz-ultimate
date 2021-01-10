@@ -11,18 +11,9 @@ import { Player } from 'src/app/models/player.model';
 export class UserService {
 
   private baseUrl: string = "http://localhost:3000"
-  private isLogged: BehaviorSubject<Boolean> = new BehaviorSubject(false)
 
   constructor(private http: HttpClient, 
     private snackBar: MatSnackBar) { }
-
-  get logged(): Boolean {
-    return this.isLogged.getValue()
-  }
-
-  set logged(value: Boolean) {
-    this.isLogged.next(value)
-  }
 
   showMessage(msg: string, action: string, type: string): void {
     this.snackBar.open(msg, action, {

@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   player: Player = {
     email: '',
-    password: ''
+    passwd: ''
   }
 
   constructor(private userService: UserService,
@@ -28,7 +28,8 @@ export class LoginComponent implements OnInit {
     headerService.headerData = {
       title: 'Login',
       icon: 'login',
-      routeUrl: '/login'
+      routeUrl: '/login',
+      logged: headerService.headerData.logged
     }
 
     this.myForm = new FormGroup({
@@ -54,15 +55,35 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
+    if (!this.validate()) return
+
     this.userService.login(this.player).subscribe(response => {
       this.userService.showMessage('Logado com sucesso!', 'X', 'success')
 
-      this.userService.logged = true
+      this.headerService.headerData.logged = true
+      this.headerService.headerData = {
+        logged: true
+      }
 
       localStorage.setItem('token', response.token)
       this.router.navigate(['/'])
     }, error => {
       if (error.status === 401) this.userService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
     })
+  }
+
+  validate(): boolean {
+    if (this.player.email.length < 1 || this.player.passwd.length < 1) {
+      this.userService.showMessage('Preencha os campos log in e senha!', 'X', 'error')
+      return false
+    }
+
+    return true
+  }
+
+  keyUp(event: any): void {
+    if (event.key === "Enter") {
+      this.login()
+    }
   }
 }

@@ -1,5 +1,6 @@
 export interface HeaderData {
-    title: string
-    icon: string
-    routeUrl: string
+    title?: string
+    icon?: string
+    routeUrl?: string
+    logged: boolean
 }

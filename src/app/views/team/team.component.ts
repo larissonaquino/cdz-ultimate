@@ -19,7 +19,8 @@ export class TeamComponent implements OnInit {
     headerService.headerData = {
       title: 'Equipe',
       icon: 'people',
-      routeUrl: '/team'
+      routeUrl: '/team',
+      logged: headerService.headerData.logged
     }
   }
 
