@@ -20,6 +20,10 @@
     grid-template-rows: 5fr;
 }
 
+.team .spinner {
+    text-align: center;
+}
+
 .team .list {
     display: grid;
     grid-template-columns: repeat(5, 36%);

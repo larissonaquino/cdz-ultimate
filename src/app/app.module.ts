@@ -17,7 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { MatInputModule} from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input'; 
 
 import { HomeComponent } from './views/home/home.component';
 import { TeamComponent } from './views/team/team.component';
@@ -31,6 +31,8 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './views/profile/profile.component';
 import { RulesComponent } from './views/rules/rules.component';
 import { ClassesComponent } from './views/classes/classes.component';
+
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { ClassesComponent } from './views/classes/classes.component';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

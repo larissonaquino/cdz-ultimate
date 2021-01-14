@@ -6,17 +6,24 @@
     </mat-card-subtitle>
   </mat-card>
 
-  <div class="list">
-    <mat-card *ngFor="let member of team" class="team mat-elevation-z3">
-      <mat-card-title class="title">{{member.username}}</mat-card-title>
-      <mat-card-subtitle class="subtitle">
-        {{ member.job }}
-      </mat-card-subtitle>
-      <img mat-card-image
-        src="../../assets/team/{{ member.image }}">
-      <mat-card-content>
-        {{ member.description }}
-      </mat-card-content>
-    </mat-card>
-  </div>
+  <span *ngIf="isLoaded; else notLoaded">
+    <div class="list">
+      <mat-card *ngFor="let member of team" class="team mat-elevation-z3">
+        <mat-card-title class="title">{{member.username}}</mat-card-title>
+        <mat-card-subtitle class="subtitle">
+          {{ member.job }}
+        </mat-card-subtitle>
+        <img mat-card-image src="../../assets/team/{{ member.image }}">
+        <mat-card-content>
+          {{ member.description }}
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </span>
+
+  <ng-template #notLoaded>
+    <div class="spinner">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </ng-template>
 </div>

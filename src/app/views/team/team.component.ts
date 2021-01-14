@@ -12,6 +12,7 @@ import { UserService } from 'src/app/components/services/user.service';
 export class TeamComponent implements OnInit {
 
   team: Team[] = []
+  isLoaded: boolean = false
 
   constructor(private userService: UserService,
     private headerService: HeaderService,
@@ -25,8 +26,10 @@ export class TeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLoaded = false
     this.teamService.getTeam().subscribe(team => {
       this.team = team
+      this.isLoaded = true
     }, err => {
       this.userService.showMessage('Não foi possível carregar a página, tente novamente...', 'X', 'error')
     })
