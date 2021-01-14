@@ -51,6 +51,8 @@ mat-card {
     margin: 10px 10px 10px 0px;
     width: 100%;
     padding: 0px;
+    color: #f05454;
+    background-color: #30475e;
 }
 
 .register .buttons .cancel {

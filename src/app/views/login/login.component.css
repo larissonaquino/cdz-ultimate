@@ -38,6 +38,8 @@
 .login .buttons button {
     margin: 10px 0px 0px 0px;
     width: 100%;
+    color: #f05454;
+    background-color: #30475e;
 }
 
 .login .register {
