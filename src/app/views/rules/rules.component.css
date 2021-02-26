@@ -1,24 +1,19 @@
 mat-card {
-    margin-top: 20px;
-    background-color: #e8e8e8;
-    margin-bottom: 20px;
     text-align: center;
+    background-color: #222831;
 }
 
 mat-card-title {
     font-size: 3rem;
     font-weight: 300;
-    line-height: 1.2;
-    color: #222831;
 }
 
 mat-card-subtitle {
     font-size: 1.1rem;
-    color: #30475e;
+    color: #e8e8e8;
 }
 
 mat-card-content {
-    color: #30475e;
     text-align: left;
 }
 

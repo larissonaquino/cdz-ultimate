@@ -1,43 +1,7 @@
-.main {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
-
-.news {
-    display: flex;
-    flex-direction: column;
-}
-
-.links {
-    margin-left: 20px;
-    position: relative;
-}
-
 mat-card {
-    background-color: #e8e8e8;
-    
+    background-color: #222831;
 }
 
-.home .title {
-    font-size: 1.7rem;
-    font-weight: 500;
-    line-height: 1.2;
-    color: #222831;
-}
-
-.home .subtitle {
-    font-size: 1.1rem;
-    color: #30475e;
-}
-
-.home mat-card-content {
-    color: #30475e;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-}
-
-.home {
-    margin-bottom: 20px;
-    text-align: center;
+mat-card-subtitle {
+    color: #e8e8e8;
 }

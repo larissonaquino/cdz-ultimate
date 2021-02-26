@@ -1,49 +1,35 @@
 <div class="parallax"></div>
-<mat-toolbar class="header mat-elevation-z4">
-  <div>
-    <span>
-      <a routerLink="/">
-        <img class="logo" src="../../../../assets/logobutton.png" alt="logo">
-      </a>
-    </span>
-    <span class="title-group">
-      <a routerLink="{{ routeUrl }}">
-        <i class="material-icons">
-          {{ icon }}
-        </i>
-        {{ title }}
-      </a>
-    </span>
-  </div>
-  <span *ngIf="isLogged; else notLogged" class="title-group">
-    <span class="title-group">
-      <a routerLink="/profile" class="last profile">
-        <button mat-icon-button color="primary">
-          <i class="material-icons">
-            settings
-          </i>
-        </button>
-      </a>
-    </span>
-  </span>
-  <!-- <span *ngIf="isLogged" class="title-group">
-    <a routerLink="/profile" class="last profile">
-      <button mat-icon-button color="primary">
-        <i class="material-icons">
-          settings
-        </i>
-      </button>
+<mat-toolbar class="mat-elevation-z5">
+  <mat-nav-list>
+    <a mat-list-item routerLink="/">
+      <img class="logo" src="../../../../assets/logobutton.png" alt="logo">
     </a>
-  </span> -->
-
-  <ng-template #notLogged>
-    <span class="title-group">
-      <a routerLink="/login" class="last">
-        <i class="material-icons">
-          login
-        </i>
-        Login
-      </a>
-    </span>
-  </ng-template>
+    <a mat-list-item routerLink="/">
+      <i class="material-icons">
+        home
+      </i>
+      Início
+    </a>
+    <a mat-list-item routerLink="/team">
+      <i class="material-icons">
+        people
+      </i>
+      Equipe
+    </a>
+    <a mat-list-item routerLink="/classes">
+      <i class="material-icons">
+        compare
+      </i>
+      Classes
+    </a>
+    <a mat-list-item routerLink="/rules">
+      <i class="material-icons">
+        list
+      </i>
+      Regras
+    </a>
+  </mat-nav-list>
 </mat-toolbar>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

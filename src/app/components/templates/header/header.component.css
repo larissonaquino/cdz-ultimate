@@ -1,62 +1,58 @@
 .parallax {
-    /* The image used */
-    background-image: url("https://media.discordapp.net/attachments/780123070211162123/780144659463798824/logobase.jpg?width=1074&height=671");
+  /* The image used */
+  background-image: url("https://media.discordapp.net/attachments/780123070211162123/780144659463798824/logobase.jpg?width=1074&height=671");
 
-    /* Set a specific height */
-    height: 85%;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* Set a specific height */
+  height: 65%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #222831;
-}
-
-.header a {
-  text-decoration: none;
-  color: #f05454;
-  vertical-align: middle;
-}
-
-.header a:hover {
-  color: #e8e8e8;
-}
-
-.header .logo {
+.logo {
   max-height: 32px;
   width: 120px;
 }
 
-.header .title-group {
+mat-toolbar {
+  background-color: #222831;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+mat-nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-nav-list a {
+  text-decoration: none;
+  color: #f05454;
+  vertical-align: auto;
+}
+
+mat-nav-list a:hover {
+  color: #e8e8e8;
+}
+
+mat-nav-list .title-group {
   margin-left: 25px;
 }
 
-.header .title-group .last {
-    margin-right: 20px;
-}
-
-.header .title-group i {
+mat-nav-list .title-group i {
   padding-right: 5px;
   vertical-align: middle;
 }
 
-.header .invisible {
-  visibility: hidden;
-}
-
-.header .profile {
-  text-align: center;
-  vertical-align: middle;
-}
-
-.header .profile button i {
-  margin-left: 5px;
-  color: #f05454;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
 }

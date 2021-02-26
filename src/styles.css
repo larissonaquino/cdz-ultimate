@@ -1,33 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #e8e8e8; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: #000;
+}
+
+mat-card {
+  background-color: #222831;
+  margin: 20px 10px 20px 10px;
+}
 
 mat-card-title {
-    color: #222831;
-    text-align: center;
+  color: #f05454;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 mat-card-subtitle {
-    color: #30475e;
-    font-size: 1.1rem;
-    text-align: center;
+  color: #e8e8e8;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 mat-card-content {
-    color: #30475e;
+  color: #e8e8e8;
+  text-align: center;
 }
 
 .red {
-    color: #f05454;
+  color: #f05454;
 }
 
 .msg-success {
-    background-color: #28a745;
-    color: #fff;
+  background-color: #28a745;
+  color: #fff;
 }
 
 .msg-error {
-    background-color: #e35e6b;
-    color: #fff;
+  background-color: #e35e6b;
+  color: #fff;
 }
