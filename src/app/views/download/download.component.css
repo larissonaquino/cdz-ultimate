@@ -1,0 +1,17 @@
+mat-card {
+    min-width: 190px;
+    background-color: #222831;
+}
+
+mat-card-content {
+    color: #e8e8e8;
+    text-align: center;
+}
+
+mat-card-content a {
+    color: #e8e8e8;
+}
+
+mat-card-content a:hover {
+    color: white;
+}

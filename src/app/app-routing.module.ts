@@ -9,6 +9,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { RulesComponent } from './views/rules/rules.component';
 import { ClassesComponent } from './views/classes/classes.component';
+import { DownloadComponent } from './views/download/download.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'download',
+    component: DownloadComponent
   }
 ];
 

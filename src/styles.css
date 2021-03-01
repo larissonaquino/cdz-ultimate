@@ -8,7 +8,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-image: #000;
+  background-color: black;
 }
 
 mat-card {

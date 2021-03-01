@@ -20,8 +20,8 @@ mat-card-subtitle {
 
 .team .header {
     display: grid;
-    grid-template-columns: 5fr;
-    grid-template-rows: 5fr;
+    grid-template-columns: 4fr;
+    grid-template-rows: 4fr;
 }
 
 .team .spinner {
@@ -30,9 +30,7 @@ mat-card-subtitle {
 
 .team .list {
     display: grid;
-    grid-template-columns: repeat(5, 36%);
-    grid-template-rows: repeat(2, 2fr);
-    max-width: 700px;
+    grid-template-columns: repeat(4, 25%);
 }
 
 .team .list mat-card {
@@ -54,7 +52,6 @@ mat-card-subtitle {
     .team .list {
         display: grid;
         grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(2, 2fr);
     }
 
     .team .list img {
@@ -73,7 +70,6 @@ mat-card-subtitle {
     .team .list {
         display: grid;
         grid-template-columns: repeat(1, 100%);
-        grid-template-rows: repeat(1, 1fr);
     }
 
     .team .list img {

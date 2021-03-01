@@ -33,6 +33,7 @@ import { RulesComponent } from './views/rules/rules.component';
 import { ClassesComponent } from './views/classes/classes.component';
 
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DownloadComponent } from './views/download/download.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     PaypalComponent,
     ProfileComponent,
     RulesComponent,
-    ClassesComponent
+    ClassesComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
