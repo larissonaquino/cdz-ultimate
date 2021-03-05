@@ -2,7 +2,6 @@ import { AuthTokenService } from './../../components/services/auth-token.service
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HeaderService } from 'src/app/components/services/header.service';
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from 'src/app/models/player.model';
 
@@ -22,15 +21,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService: UserService,
     private authTokenService: AuthTokenService,
-    private router: Router,
-    private headerService: HeaderService) {
-
-    headerService.headerData = {
-      title: 'Perfil',
-      icon: 'person',
-      routeUrl: '/',
-      logged: headerService.headerData.logged
-    }
+    private router: Router) {
 
     this.myForm = new FormGroup({
       nameFormControl: new FormControl('', [

@@ -4,7 +4,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from './../../models/player.model';
-import { HeaderService } from 'src/app/components/services/header.service';
 import { AuthTokenService } from 'src/app/components/services/auth-token.service';
 
 @Component({
@@ -22,15 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService,
     private router: Router,
-    private headerService: HeaderService,
     private authTokenService: AuthTokenService) {
-
-    headerService.headerData = {
-      title: 'Login',
-      icon: 'login',
-      routeUrl: '/login',
-      logged: headerService.headerData.logged
-    }
 
     this.myForm = new FormGroup({
       emailFormControl: new FormControl('', [
@@ -59,11 +50,6 @@ export class LoginComponent implements OnInit {
 
     this.userService.login(this.player).subscribe(response => {
       this.userService.showMessage('Logado com sucesso!', 'X', 'success')
-
-      this.headerService.headerData.logged = true
-      this.headerService.headerData = {
-        logged: true
-      }
 
       localStorage.setItem('token', response.token)
       this.router.navigate(['/'])

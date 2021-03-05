@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/components/services/header.service';
 import { TeamService } from './../../components/services/team.service';
 import { Team } from 'src/app/models/team.model';
 import { UserService } from 'src/app/components/services/user.service';
@@ -15,15 +14,7 @@ export class TeamComponent implements OnInit {
   isLoaded: boolean = false
 
   constructor(private userService: UserService,
-    private headerService: HeaderService,
-    private teamService: TeamService) {
-    headerService.headerData = {
-      title: 'Equipe',
-      icon: 'people',
-      routeUrl: '/team',
-      logged: headerService.headerData.logged
-    }
-  }
+    private teamService: TeamService) { }
 
   ngOnInit(): void {
     this.isLoaded = false

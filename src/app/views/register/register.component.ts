@@ -4,7 +4,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from 'src/app/models/player.model';
-import { HeaderService } from 'src/app/components/services/header.service';
 
 @Component({
   selector: 'app-register',
@@ -23,15 +22,7 @@ export class RegisterComponent implements OnInit {
   confirmPassword: String = ''
 
   constructor(private userService: UserService,
-    private router: Router,
-    private headerService: HeaderService) {
-
-    headerService.headerData = {
-      title: 'Registre-se',
-      icon: 'person_add',
-      routeUrl: '/register',
-      logged: headerService.headerData.logged
-    }
+    private router: Router) {
 
     this.myForm = new FormGroup({
       nameFormControl: new FormControl('', [

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from 'src/app/components/services/header.service';
 
 @Component({
   selector: 'app-classes',
@@ -8,15 +7,8 @@ import { HeaderService } from 'src/app/components/services/header.service';
 })
 export class ClassesComponent implements OnInit {
 
-  constructor(private headerService: HeaderService) { 
-    headerService.headerData = {
-      title: 'Classes',
-      icon: 'compare',
-      routeUrl: '/classes',
-      logged: headerService.headerData.logged
-    }
-  }
+  constructor() { }
 
   ngOnInit(): void { }
-
+  
 }
