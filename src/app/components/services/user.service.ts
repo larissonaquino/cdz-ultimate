@@ -28,7 +28,7 @@ export class UserService {
   }
   
   login(player: Player): Observable<any> {
-    return this.http.post<Player>(`${this.baseUrl}/login`, player)
+    return this.http.post<Player>(`${this.baseUrl}/authenticate`, player)
   }
 
   getUserByEmail(email: string): Observable<Player> {
