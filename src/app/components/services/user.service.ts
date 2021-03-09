@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { Player } from 'src/app/models/player.model';
@@ -10,7 +9,7 @@ import { Player } from 'src/app/models/player.model';
 })
 export class UserService {
 
-  private baseUrl: string = "http://localhost:3000"
+  private baseUrl: string = "http://localhost:3000/api"
 
   constructor(private http: HttpClient, 
     private snackBar: MatSnackBar) { }

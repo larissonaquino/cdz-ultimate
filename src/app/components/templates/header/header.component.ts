@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   isLogged: boolean = false
+  value = 'Clear me';
+  user: string = ''
+  password: string = ''
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  set logged(value: boolean) {
-    this.isLogged = value
-  }
 }

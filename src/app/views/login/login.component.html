@@ -1,36 +1,17 @@
-<mat-card class="login mat-elevation-z3">
-  <mat-card-title class="title">Login</mat-card-title>
-  <mat-card-content>
+<div class="login-form">
     <form [formGroup]="myForm">
-      <mat-form-field>
-        <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" 
-          [(ngModel)]="player.email" required>
-      </mat-form-field>
+        <mat-form-field class="emailForm">
+            <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" [(ngModel)]="player.email" (keyup)="keyUp($event)" required>
+        </mat-form-field>
 
-      <mat-form-field>
-        <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
-          [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
-      </mat-form-field>
+        <mat-form-field>
+            <input formControlName="passwordFormControl" matInput type="password" placeholder="senha" [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
+        </mat-form-field>
     </form>
 
     <div class="buttons">
-      <button (click)="login()" mat-flat-button color="primary">
-        Log in
-      </button>
+        <button (click)="login()" mat-flat-button color="accent">
+      Log in
+    </button>
     </div>
-
-    <div class="redirections">
-      <span class="register">
-        <a routerLink="/register">
-          Náo tem uma conta? Registre-se
-        </a>
-      </span>
-
-      <span class="register">
-        <a routerLink="/">
-          Esqueci minha senha
-        </a>
-      </span>
-    </div>
-  </mat-card-content>
-</mat-card>
+</div>

@@ -1,58 +1,56 @@
 .parallax {
-  /* The image used */
-  background-image: url('https://s2.glbimg.com/QxQqjTHyyLRXKpi_8SRyaPu54lA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/f/2/TPlkjsQKeqkB25ySI4qA/saint-seiya-online-hades.jpg');
-
-  /* Set a specific height */
-  height: 65%;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    /* The image used */
+    background-image: url('https://s2.glbimg.com/QxQqjTHyyLRXKpi_8SRyaPu54lA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/f/2/TPlkjsQKeqkB25ySI4qA/saint-seiya-online-hades.jpg');
+    /* Set a specific height */
+    height: 65%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .logo {
-  max-height: 32px;
-  width: 120px;
+    max-height: 32px;
+    width: 120px;
 }
 
 mat-toolbar {
-  background-color: #222831;
-  display: flex;
-  justify-content: center;
-  border-radius: 5px;
-  max-width: 1200px;
-  margin: 0 auto;
+    background-color: #222831;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 mat-nav-list {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 mat-nav-list a {
-  text-decoration: none;
-  color: #f05454;
-  vertical-align: auto;
+    text-decoration: none;
+    color: #f05454;
+    vertical-align: auto;
 }
 
 mat-nav-list a:hover {
-  color: #e8e8e8;
+    color: #e8e8e8;
 }
 
 mat-nav-list .title-group {
-  margin-left: 25px;
+    margin-left: 25px;
 }
 
 mat-nav-list .title-group i {
-  padding-right: 5px;
-  vertical-align: middle;
+    padding-right: 5px;
+    vertical-align: middle;
 }
 
 .content {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }

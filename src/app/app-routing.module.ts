@@ -33,10 +33,6 @@ const routes: Routes = [
     component: DonateComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
     path: 'register',
     component: RegisterComponent
   },

@@ -34,21 +34,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    const token = this.authTokenService.getToken()
-
-    if (token == null || token == '') return
-
-    this.userService.authorization(token).subscribe(res => {
-      this.userService.showMessage('Você já está logado!', 'ERRO', 'error')
-      this.router.navigate(['/'])
-    }, error => localStorage.setItem('token', ''))
-  }
+  ngOnInit(): void { }
 
   login(): void {
     if (!this.validate()) return
-
+    
     this.userService.login(this.player).subscribe(response => {
+      console.log('login')
       this.userService.showMessage('Logado com sucesso!', 'X', 'success')
 
       localStorage.setItem('token', response.token)
@@ -60,7 +52,7 @@ export class LoginComponent implements OnInit {
 
   validate(): boolean {
     if (this.player.email.length < 1 || this.player.passwd.length < 1) {
-      this.userService.showMessage('Preencha os campos log in e senha!', 'X', 'error')
+      this.userService.showMessage('Preencha os campos de usuário e senha!', 'X', 'error')
       return false
     }
 
@@ -69,6 +61,7 @@ export class LoginComponent implements OnInit {
 
   keyUp(event: any): void {
     if (event.key === "Enter") {
+      console.log('enter login')
       this.login()
     }
   }
