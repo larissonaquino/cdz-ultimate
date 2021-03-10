@@ -1,8 +1,8 @@
-myForm {
+form {
     color: #e8e8e8;
 }
 
-.login-form {
+.login-form div {
     display: flex;
     align-items: center;
 }
@@ -14,5 +14,20 @@ myForm {
 .buttons button {
     margin-left: 15px;
     background-color: #f05454;
+    color: #e8e8e8;
+}
+
+.buttons button:hover {
+    background-color: #e8e8e8;
+    color: #f05454;
+}
+
+.profile a {
+    text-decoration: none;
+    color: #f05454;
+    vertical-align: auto;
+}
+
+.profile a:hover {
     color: #e8e8e8;
 }

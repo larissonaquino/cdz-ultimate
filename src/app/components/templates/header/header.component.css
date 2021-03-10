@@ -41,15 +41,6 @@ mat-nav-list a:hover {
     color: #e8e8e8;
 }
 
-mat-nav-list .title-group {
-    margin-left: 25px;
-}
-
-mat-nav-list .title-group i {
-    padding-right: 5px;
-    vertical-align: middle;
-}
-
 .content {
     max-width: 1200px;
     margin: 0 auto;

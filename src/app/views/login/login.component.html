@@ -1,17 +1,28 @@
 <div class="login-form">
-    <form [formGroup]="myForm">
-        <mat-form-field class="emailForm">
-            <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" [(ngModel)]="player.email" (keyup)="keyUp($event)" required>
-        </mat-form-field>
+    <div *ngIf="notLogged; else logged">
+        <form [formGroup]="myForm">
+            <mat-form-field class="emailForm">
+                <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail"
+                    [(ngModel)]="player.email" (keyup)="keyUp($event)" required>
+            </mat-form-field>
 
-        <mat-form-field>
-            <input formControlName="passwordFormControl" matInput type="password" placeholder="senha" [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
-        </mat-form-field>
-    </form>
+            <mat-form-field>
+                <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
+                    [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
+            </mat-form-field>
+        </form>
 
-    <div class="buttons">
-        <button (click)="login()" mat-flat-button color="accent">
-      Log in
-    </button>
+        <div class="buttons">
+            <button (click)="login()" mat-flat-button color="accent">
+                Log in
+            </button>
+        </div>
     </div>
+    <ng-template #logged>
+        <div class="profile">
+            <a mat-list-item routerLink="/profile">
+                Perfil
+            </a>
+        </div>
+    </ng-template>
 </div>

@@ -5,3 +5,7 @@ mat-card {
 mat-card-subtitle {
     color: #e8e8e8;
 }
+
+mat-card-content > p {
+ margin-top: 15px;
+}

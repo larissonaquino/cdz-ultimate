@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
     passwd: ''
   }
 
+  notLogged: boolean = true
+
   constructor(private userService: UserService,
     private router: Router,
     private authTokenService: AuthTokenService) {
@@ -34,16 +36,25 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    const token = this.authTokenService.getToken()
+    this.userService.authorization(token).subscribe(auth => {
+      this.player = this.authTokenService.decodePayloadJWT()
+      this.notLogged = false
+    }, error => {
+      localStorage.setItem('token', '')
+      this.notLogged = true
+    })
+  }
 
   login(): void {
     if (!this.validate()) return
     
     this.userService.login(this.player).subscribe(response => {
-      console.log('login')
       this.userService.showMessage('Logado com sucesso!', 'X', 'success')
 
       localStorage.setItem('token', response.token)
+      this.notLogged = false
       this.router.navigate(['/'])
     }, error => {
       if (error.status === 401) this.userService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
