@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(120, 122, 124, 0.2);
+    background-color: #222831;
 }
 
 .profile .title {
@@ -28,6 +28,7 @@
 .profile form .form-field mat-label {
     margin-bottom: 5px;
     font-weight: 500;
+    color: #e8e8e8;
 }
 
 .profile form input {
@@ -36,6 +37,7 @@
     font-weight: 300;
     font-size: 1.1rem;
     border-radius: 5px;
+    color: #e8e8e8;
 }
 
 .profile .buttons {
@@ -48,6 +50,13 @@
     margin: 10px 10px 10px 0px;
     width: 100%;
     padding: 0px;
+    background-color: #f05454;
+    color: #e8e8e8;
+}
+
+.profile .buttons button:hover {
+    background-color: #e8e8e8;
+    color: #f05454;
 }
 
 .profile .buttons .cancel {

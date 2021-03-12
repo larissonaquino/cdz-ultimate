@@ -3,41 +3,36 @@
   <mat-card-content>
     <form [formGroup]="myForm">
       <mat-form-field class="form-field">
-        <mat-label>Nome</mat-label>
-        <input formControlName="nameFormControl" matInput type="text" minLength="3" placeholder="nome"
+        <mat-label>Usuário</mat-label>
+        <input formControlName="nameFormControl" matInput type="text" minLength="3" maxlength="30" placeholder="nome"
           [(ngModel)]="player.name" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>E-mail</mat-label>
-        <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail" [(ngModel)]="player.email"
-          required>
+        <input formControlName="emailFormControl" matInput type="text" maxlength="64" placeholder="e-mail"
+          [(ngModel)]="player.email" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
-        <input formControlName="passwordFormControl" matInput type="password" placeholder="senha" [(ngModel)]="player.passwd"
-          required>
+        <input formControlName="passwordFormControl" matInput type="password" maxlength="32" placeholder="senha"
+          [(ngModel)]="player.passwd" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Confirmar Senha</mat-label>
-        <input formControlName="confirmPasswordFormControl" matInput type="password" placeholder="confirmar senha"
-          [(ngModel)]="confirmPassword" required>
+        <input formControlName="confirmPasswordFormControl" matInput type="password" maxlength="32"
+          placeholder="confirmar senha" [(ngModel)]="confirmPassword" required>
       </mat-form-field>
     </form>
+
     <div class="buttons">
       <button mat-flat-button (click)="createAccount($event)" color="primary">
-        <i class="material-icons">
-          arrow_forward_ios
-        </i>
         Salvar
       </button>
 
-      <button class="cancel" mat-flat-button (click)="cancel($event)" color="primary">
-        <i class="material-icons">
-          cancel
-        </i>
+      <button class="cancel" mat-flat-button (click)="cancel($event)" color="accent">
         Cancelar
       </button>
     </div>

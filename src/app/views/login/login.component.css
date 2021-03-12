@@ -23,12 +23,12 @@ form {
     color: #f05454;
 }
 
-.profile a {
+.profile a, .logout a {
     text-decoration: none;
     color: #f05454;
     vertical-align: auto;
 }
 
-.profile a:hover {
+.profile a:hover, .logout a:hover {
     color: #e8e8e8;
 }

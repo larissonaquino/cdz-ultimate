@@ -48,10 +48,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     const token = this.authTokenService.getToken()
     this.userService.authorization(token).subscribe(auth => {
-      this.player = this.authTokenService.decodePayloadJWT()
+      this.player = auth
     }, error => {
       if (error.status = 403) this.userService.showMessage('Você não está logado, entre com sua conta', 'ERRO', 'error')
-      this.router.navigate(['/login'])
+      this.router.navigate(['/'])
     })
   }
 

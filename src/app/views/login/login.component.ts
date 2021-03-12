@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   myForm: FormGroup;
 
   player: Player = {
-    email: '',
+    name: '',
     passwd: ''
   }
 
@@ -26,9 +26,8 @@ export class LoginComponent implements OnInit {
     private authTokenService: AuthTokenService) {
 
     this.myForm = new FormGroup({
-      emailFormControl: new FormControl('', [
-        Validators.required,
-        Validators.email,
+      nameFormControl: new FormControl('', [
+        Validators.required
       ]),
       passwordFormControl: new FormControl('', [
         Validators.required
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const token = this.authTokenService.getToken()
     this.userService.authorization(token).subscribe(auth => {
-      this.player = this.authTokenService.decodePayloadJWT()
+      this.player = auth
       this.notLogged = false
     }, error => {
       localStorage.setItem('token', '')
@@ -57,12 +56,23 @@ export class LoginComponent implements OnInit {
       this.notLogged = false
       this.router.navigate(['/'])
     }, error => {
-      if (error.status === 401) this.userService.showMessage('E-mail ou senha incorretos', 'ERRO', 'error')
+      if (error.status === 401) this.userService.showMessage('Usuário ou senha incorretos', 'ERRO', 'error')
     })
   }
 
+  logout(): void {
+    localStorage.clear()
+    this.player.name = ''
+    this.player.passwd = ''
+    this.notLogged = true
+  }
+
+  register(): void {
+    this.router.navigate(['/register'])
+  }
+
   validate(): boolean {
-    if (this.player.email.length < 1 || this.player.passwd.length < 1) {
+    if (this.player.name.length < 1 || this.player.passwd.length < 1) {
       this.userService.showMessage('Preencha os campos de usuário e senha!', 'X', 'error')
       return false
     }
@@ -72,7 +82,6 @@ export class LoginComponent implements OnInit {
 
   keyUp(event: any): void {
     if (event.key === "Enter") {
-      console.log('enter login')
       this.login()
     }
   }

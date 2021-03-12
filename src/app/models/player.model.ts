@@ -1,6 +1,6 @@
 export interface Player {
     id?: number
-    email: string
+    email?: string
     name?: string
     passwd?: string
 }

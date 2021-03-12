@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { UserService } from 'src/app/components/services/user.service';
 import { Player } from 'src/app/models/player.model';
+import { AuthTokenService } from 'src/app/components/services/auth-token.service';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +23,8 @@ export class RegisterComponent implements OnInit {
   confirmPassword: String = ''
 
   constructor(private userService: UserService,
-    private router: Router) {
+    private router: Router,
+    private authTokenService: AuthTokenService) {
 
     this.myForm = new FormGroup({
       nameFormControl: new FormControl('', [
@@ -46,15 +48,21 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    const token = this.authTokenService.getToken()
+    this.userService.authorization(token).subscribe(auth => {
+      this.router.navigate(['/'])
+      this.userService.showMessage('Você já está logado', 'X', 'error')
+    }, error => { })
+  }
 
   validateForm(): Boolean {
     let isInvalid: Boolean = false
+    let isUsernameLengthInvalid: Boolean = false
     let isPasswordsDifferent: Boolean = false
 
-    console.log('validateForm')
-
     if (this.player.name == null || this.player.name === '') isInvalid = true
+    if (this.player.name.length > 30) { isInvalid = true; isUsernameLengthInvalid = true }
     if (this.player.email == null || this.player.email === '') isInvalid = true
     if (this.player.passwd == null || this.player.passwd === '') isInvalid = true
 
@@ -62,11 +70,14 @@ export class RegisterComponent implements OnInit {
 
     if (isInvalid) 
       this.userService.showMessage('Preencha todos os campos obrigatórios!', 'X', 'error')
+    
+    if (isUsernameLengthInvalid)
+      this.userService.showMessage('!', 'X', 'error')
       
     if (isPasswordsDifferent)
       this.userService.showMessage('Senha inválida', 'X', 'error')
 
-    return !isInvalid && !isPasswordsDifferent
+    return !isInvalid && !isPasswordsDifferent && !isUsernameLengthInvalid
   }
 
   createAccount(e: any): void {
@@ -77,7 +88,7 @@ export class RegisterComponent implements OnInit {
         this.userService.showMessage('Conta criada com sucesso!', 'X', 'success')
         this.router.navigate(['/login'])
       }, error => {
-        if (error.status === 422) this.userService.showMessage('E-mail já cadastrado', 'ERRO', 'error')
+        if (error.status === 422) this.userService.showMessage('Usuário ou e-mail já cadastrado', 'ERRO', 'error')
         if (error.status === 500) this.userService.showMessage('Erro ao cadastrar', 'ERRO', 'error')
       })
     }

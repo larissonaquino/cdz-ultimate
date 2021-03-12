@@ -2,9 +2,9 @@
     <div *ngIf="notLogged; else logged">
         <a mat-list-item>
             <form [formGroup]="myForm">
-                <mat-form-field class="emailForm">
-                    <input formControlName="emailFormControl" matInput type="text" placeholder="e-mail"
-                        [(ngModel)]="player.email" (keyup)="keyUp($event)" required>
+                <mat-form-field class="nameForm">
+                    <input formControlName="nameFormControl" matInput type="text" placeholder="e-mail"
+                        [(ngModel)]="player.name" (keyup)="keyUp($event)" required>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -17,14 +17,24 @@
                 <button (click)="login()" mat-flat-button color="accent">
                     Log in
                 </button>
+                <button (click)="register()" mat-flat-button color="accent">
+                    Registre-se
+                </button>
             </div>
         </a>
     </div>
     <ng-template #logged>
-        <div class="profile">
-            <a mat-list-item routerLink="/profile">
-                Perfil
-            </a>
+        <div>
+            <div class="profile">
+                <a mat-list-item routerLink="/profile">
+                    Perfil
+                </a>
+            </div>
+            <div class="logout" (click)="logout()">
+                <a mat-list-item>
+                    Sair
+                </a>
+            </div>
         </div>
     </ng-template>
 </div>
