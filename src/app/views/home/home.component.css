@@ -9,3 +9,13 @@ mat-card-subtitle {
 mat-card-content > p {
  margin-top: 15px;
 }
+
+.news {
+    display: flex;
+    flex-direction: column;
+}
+
+carousel {
+    margin: 20px 10px 20px 10px;
+    align-self: center;
+}

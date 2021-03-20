@@ -16,13 +16,13 @@
 
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
-        <input formControlName="passwordFormControl" matInput type="password" maxlength="32" placeholder="senha"
+        <input formControlName="passwordFormControl" matInput type="password" maxlength="10" placeholder="senha"
           [(ngModel)]="player.passwd" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Confirmar Senha</mat-label>
-        <input formControlName="confirmPasswordFormControl" matInput type="password" maxlength="32"
+        <input formControlName="confirmPasswordFormControl" matInput type="password" maxlength="10"
           placeholder="confirmar senha" [(ngModel)]="confirmPassword" required>
       </mat-form-field>
     </form>

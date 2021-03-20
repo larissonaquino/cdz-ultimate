@@ -34,6 +34,7 @@ import { ClassesComponent } from './views/classes/classes.component';
 
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DownloadComponent } from './views/download/download.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { DownloadComponent } from './views/download/download.component';
     MatInputModule,
     HttpClientModule,
     CommonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
