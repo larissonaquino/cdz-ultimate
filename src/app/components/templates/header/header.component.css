@@ -1,6 +1,6 @@
 .parallax {
     /* The image used */
-    background-image: url('https://s2.glbimg.com/QxQqjTHyyLRXKpi_8SRyaPu54lA=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/f/2/TPlkjsQKeqkB25ySI4qA/saint-seiya-online-hades.jpg');
+    background-image: url('../../../../assets/logobase.jpg');
     /* Set a specific height */
     height: 65%;
     /* Create the parallax scrolling effect */
@@ -13,7 +13,7 @@
 }
 
 .logo {
-    max-height: 32px;
+    max-height: 60px;
     width: 120px;
 }
 

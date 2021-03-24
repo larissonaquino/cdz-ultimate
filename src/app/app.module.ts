@@ -21,7 +21,6 @@ import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './views/home/home.component';
 import { TeamComponent } from './views/team/team.component';
-import { DonateComponent } from './views/donate/donate.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { PaypalComponent } from './components/paypal/paypal.component';
@@ -35,6 +34,7 @@ import { ClassesComponent } from './views/classes/classes.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DownloadComponent } from './views/download/download.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { CashComponent } from './views/cash/cash/cash.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +44,14 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     NavComponent,
     HomeComponent,
     TeamComponent,
-    DonateComponent,
     LoginComponent,
     RegisterComponent,
     PaypalComponent,
     ProfileComponent,
     RulesComponent,
     ClassesComponent,
-    DownloadComponent
+    DownloadComponent,
+    CashComponent
   ],
   imports: [
     BrowserModule,
