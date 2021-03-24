@@ -12,6 +12,7 @@ export class TeamComponent implements OnInit {
 
   team: Team[] = []
   isLoaded: boolean = false
+  isServiceOff: boolean = false
 
   constructor(private userService: UserService,
     private teamService: TeamService) { }
@@ -23,6 +24,7 @@ export class TeamComponent implements OnInit {
       this.isLoaded = true
     }, err => {
       this.userService.showMessage('Não foi possível carregar a página, tente novamente...', 'X', 'error')
+      this.isServiceOff = true
     })
   }
 }

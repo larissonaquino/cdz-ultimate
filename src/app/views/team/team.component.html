@@ -22,8 +22,11 @@
   </span>
 
   <ng-template #notLoaded>
-    <div class="spinner">
+    <div *ngIf="!isServiceOff; else serviceIsOff" class="spinner">
       <p-progressSpinner></p-progressSpinner>
     </div>
+    <ng-template #serviceIsOff>
+      <h3 class="off">Não foi possível obter a lista de membros. Por favor, tente novamente.</h3>
+    </ng-template>
   </ng-template>
 </div>

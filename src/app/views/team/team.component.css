@@ -42,6 +42,11 @@ mat-card-subtitle {
     height: 233px;;
 }
 
+.off {
+    text-align: center;
+    color: #f05454;
+}
+
 @media (max-width: 1022px) {
     .team .header {
         display: grid;
