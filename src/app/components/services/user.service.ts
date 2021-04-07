@@ -31,10 +31,6 @@ export class UserService {
     return this.http.post<Player>(`${this.baseUrl}/authenticate`, player)
   }
 
-  getUserByEmail(email: string): Observable<Player> {
-    return this.http.get<Player>(`${this.baseUrl}/userByEmail`, { params: { email } })
-  }
-
   authorization(token: string): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
