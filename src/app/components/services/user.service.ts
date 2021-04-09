@@ -9,7 +9,7 @@ import { Player } from 'src/app/models/player.model';
 })
 export class UserService {
 
-  private baseUrl: string = "http://localhost:3000/api"
+  private baseUrl: string = "https://cdz-ultimate.herokuapp.com/api"
 
   constructor(private http: HttpClient, 
     private snackBar: MatSnackBar) { }

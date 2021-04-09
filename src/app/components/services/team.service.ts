@@ -8,7 +8,7 @@ import { Team } from 'src/app/models/team.model';
 })
 export class TeamService {
 
-  baseUrl: string = "http://localhost:3000/api";
+  baseUrl: string = "https://cdz-ultimate.herokuapp.com/api";
 
   constructor(private http: HttpClient) { }
 

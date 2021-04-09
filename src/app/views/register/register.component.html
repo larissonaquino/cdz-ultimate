@@ -4,7 +4,7 @@
     <form [formGroup]="myForm">
       <mat-form-field class="form-field">
         <mat-label>Usuário</mat-label>
-        <input formControlName="nameFormControl" matInput type="text" minLength="3" maxlength="30" placeholder="nome"
+        <input formControlName="nameFormControl" matInput type="text" minLength="4" maxlength="10" placeholder="nome"
           [(ngModel)]="player.name" required>
       </mat-form-field>
 

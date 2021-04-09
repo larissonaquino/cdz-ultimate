@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
     let isPasswordInvalid: Boolean = false
 
     if (this.player.name == null || this.player.name === '') isInvalid = true
-    if (this.player.name.length > 30) { isInvalid = true; isUsernameLengthInvalid = true }
+    if (this.player.name.length < 4 || this.player.name.length > 10 ) isUsernameLengthInvalid = true
     if (this.player.email == null || this.player.email === '') isInvalid = true
     if (this.player.passwd == null || this.player.passwd === '') isInvalid = true
 
@@ -76,7 +76,7 @@ export class RegisterComponent implements OnInit {
       this.userService.showMessage('Preencha todos os campos obrigatórios!', 'X', 'error')
 
     if (isUsernameLengthInvalid)
-      this.userService.showMessage('!', 'X', 'error')
+      this.userService.showMessage('Usuário deve conter entre 4 e 10 caracteres!', 'X', 'error')
 
     if (isPasswordsDifferent)
       this.userService.showMessage('Senha inválida. Certifique-se de que digitou corretamente nos dois campos', 'X', 'error')
