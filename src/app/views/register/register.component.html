@@ -25,10 +25,15 @@
         <input formControlName="confirmPasswordFormControl" matInput type="password" minlength="4" maxlength="10"
           placeholder="confirmar senha" [(ngModel)]="confirmPassword" required>
       </mat-form-field>
+
+      <div class="checkbox">
+        <input type="checkbox" name="termos" (change)="termosDisabled = !termosDisabled">
+        <label for="termos"><a href="/rules" target="_blank">Concordo com as regras e termos de serviço</a></label>
+      </div>
     </form>
 
     <div class="buttons">
-      <button mat-flat-button (click)="createAccount($event)" color="primary">
+      <button mat-flat-button (click)="createAccount($event)" color="primary" [disabled]="termosDisabled">
         Salvar
       </button>
 

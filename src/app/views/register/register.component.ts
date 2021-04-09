@@ -12,7 +12,7 @@ import { AuthTokenService } from 'src/app/components/services/auth-token.service
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  myForm: FormGroup;
+  myForm: FormGroup
 
   player: Player = {
     name: '',
@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit {
   }
 
   confirmPassword: String = ''
+
+  termosDisabled: boolean = true
 
   constructor(private userService: UserService,
     private router: Router,
@@ -77,7 +79,7 @@ export class RegisterComponent implements OnInit {
       this.userService.showMessage('!', 'X', 'error')
 
     if (isPasswordsDifferent)
-      this.userService.showMessage('Senha inválida', 'X', 'error')
+      this.userService.showMessage('Senha inválida. Certifique-se de que digitou corretamente nos dois campos', 'X', 'error')
 
     if (isPasswordInvalid)
       this.userService.showMessage('Senha deve conter entre 4 e 10 caracteres', 'X', 'error')

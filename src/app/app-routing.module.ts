@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'team',
     component: TeamComponent
   },
-  {
-    path: 'cash',
-    component: CashComponent
-  },
+  // {
+  //   path: 'cash',
+  //   component: CashComponent
+  // },
   {
     path: 'classes',
     component: ClassesComponent

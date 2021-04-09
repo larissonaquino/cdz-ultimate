@@ -43,6 +43,20 @@ mat-card {
     color: #e8e8e8;
 }
 
+.register form .checkbox {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+}
+
+.register form .checkbox a {
+    color: #e8e8e8;
+}
+
+.register form .checkbox input {
+    margin-right: 10px;
+}
+
 .register .buttons {
     display: flex;
     justify-content: space-between;
@@ -60,6 +74,11 @@ mat-card {
 .register .buttons button:hover {
     background-color: #e8e8e8;
     color: #f05454;
+}
+
+.register .buttons button:disabled {
+    background-color: #30475e;
+    color: #e8e8e8;
 }
 
 .register .buttons .cancel {
