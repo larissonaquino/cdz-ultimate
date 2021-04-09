@@ -2,11 +2,23 @@
     <mat-card-title>
         Coloque cash na sua conta
     </mat-card-title>
+    <mat-card-subtitle>
+        <span class="red">IMPORTANTE:</span> Não se esqueça de sempre manter seu comprovante, especialmente em casos de
+        pagamentos por boleto ou débito em conta,
+        pode ser útil caso haja qualquer problema com o serviço das plataformas de pagamento utilizadas.
+    </mat-card-subtitle>
     <mat-card-content>
         <mat-tab-group mat-align-tabs="center">
             <mat-tab label="Mercado Pago">Content 1</mat-tab>
             <mat-tab label="PagSeguro">Content 2</mat-tab>
-            <mat-tab label="Nubank">Content 3</mat-tab>
+            <mat-tab label="PicPay">
+                <div class="prices">
+                    <mat-card *ngFor="let price of picPayPrices">
+                        <span class="item"><a href="{{ urlBasePicPay + price }}" target="_blank">Clique aqui para pagar {{ price }}</a></span>
+                    </mat-card>
+                </div>
+            </mat-tab>
+            <mat-tab label="Nubank">Content 4</mat-tab>
         </mat-tab-group>
     </mat-card-content>
 </mat-card>
