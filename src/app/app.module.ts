@@ -34,7 +34,8 @@ import { ClassesComponent } from './views/classes/classes.component';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DownloadComponent } from './views/download/download.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
-import { CashComponent } from './views/cash/cash/cash.component';
+import { CashComponent } from './views/cash/cash.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { CashComponent } from './views/cash/cash/cash.component';
     HttpClientModule,
     CommonModule,
     ProgressSpinnerModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

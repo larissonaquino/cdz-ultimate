@@ -1,0 +1,37 @@
+mat-card {
+    min-width: 190px;
+    background-color: #222831;
+}
+
+mat-card-title {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+mat-card-subtitle {
+    color: #e8e8e8;
+}
+
+mat-tab-group {
+    margin-bottom: 48px;
+    background-color: #30475e;
+}
+
+.prices {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-evenly;
+}
+
+.item {
+    font-size: 15px;
+    text-align: center;
+}
+
+.prices a {
+    color: #f05454;
+}

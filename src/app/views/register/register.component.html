@@ -4,8 +4,8 @@
     <form [formGroup]="myForm">
       <mat-form-field class="form-field">
         <mat-label>Usuário</mat-label>
-        <input formControlName="nameFormControl" matInput type="text" minLength="3" maxlength="30" placeholder="nome"
-          [(ngModel)]="player.name" required>
+        <input formControlName="nameFormControl" matInput type="text" minLength="4" maxlength="10" placeholder="nome"
+          [(ngModel)]="player.name" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
@@ -16,19 +16,24 @@
 
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
-        <input formControlName="passwordFormControl" matInput type="password" maxlength="10" placeholder="senha"
-          [(ngModel)]="player.passwd" required>
+        <input formControlName="passwordFormControl" matInput type="password" minlength="4" maxlength="10" placeholder="senha"
+          [(ngModel)]="player.passwd" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Confirmar Senha</mat-label>
-        <input formControlName="confirmPasswordFormControl" matInput type="password" maxlength="10"
-          placeholder="confirmar senha" [(ngModel)]="confirmPassword" required>
+        <input formControlName="confirmPasswordFormControl" matInput type="password" minlength="4" maxlength="10"
+          placeholder="confirmar senha" [(ngModel)]="confirmPassword" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
+
+      <div class="checkbox">
+        <input type="checkbox" name="termos" (change)="termosDisabled = !termosDisabled">
+        <label for="termos"><a href="/rules" target="_blank">Concordo com as regras e termos de serviço</a></label>
+      </div>
     </form>
 
     <div class="buttons">
-      <button mat-flat-button (click)="createAccount($event)" color="primary">
+      <button mat-flat-button (click)="createAccount($event)" color="primary" [disabled]="termosDisabled">
         Salvar
       </button>
 

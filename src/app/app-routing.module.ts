@@ -8,7 +8,7 @@ import { ProfileComponent } from './views/profile/profile.component';
 import { RulesComponent } from './views/rules/rules.component';
 import { ClassesComponent } from './views/classes/classes.component';
 import { DownloadComponent } from './views/download/download.component';
-import { CashComponent } from './views/cash/cash/cash.component';
+import { CashComponent } from './views/cash/cash.component';
 
 const routes: Routes = [
   {
@@ -19,10 +19,10 @@ const routes: Routes = [
     path: 'team',
     component: TeamComponent
   },
-  {
-    path: 'cash',
-    component: CashComponent
-  },
+  // {
+  //   path: 'cash',
+  //   component: CashComponent
+  // },
   {
     path: 'classes',
     component: ClassesComponent

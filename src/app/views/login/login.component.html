@@ -3,13 +3,13 @@
         <a mat-list-item>
             <form [formGroup]="myForm">
                 <mat-form-field class="nameForm">
-                    <input formControlName="nameFormControl" matInput type="text" placeholder="e-mail"
-                        [(ngModel)]="player.name" (keyup)="keyUp($event)" required>
+                    <input formControlName="nameFormControl" matInput type="text" placeholder="usuário"
+                        [(ngModel)]="player.name" (keyup)="keyUp($event)" maxlength="10" required>
                 </mat-form-field>
 
                 <mat-form-field>
                     <input formControlName="passwordFormControl" matInput type="password" placeholder="senha"
-                        [(ngModel)]="player.passwd" (keyup)="keyUp($event)" required>
+                        [(ngModel)]="player.passwd" (keyup)="keyUp($event)" maxlength="10" required>
                 </mat-form-field>
             </form>
 

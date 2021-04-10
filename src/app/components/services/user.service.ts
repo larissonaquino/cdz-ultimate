@@ -9,7 +9,7 @@ import { Player } from 'src/app/models/player.model';
 })
 export class UserService {
 
-  private baseUrl: string = "http://localhost:3000/api"
+  private baseUrl: string = "https://cdz-ultimate.herokuapp.com/api"
 
   constructor(private http: HttpClient, 
     private snackBar: MatSnackBar) { }
@@ -29,10 +29,6 @@ export class UserService {
   
   login(player: Player): Observable<any> {
     return this.http.post<Player>(`${this.baseUrl}/authenticate`, player)
-  }
-
-  getUserByEmail(email: string): Observable<Player> {
-    return this.http.get<Player>(`${this.baseUrl}/userByEmail`, { params: { email } })
   }
 
   authorization(token: string): Observable<any> {
