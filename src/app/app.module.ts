@@ -36,6 +36,7 @@ import { DownloadComponent } from './views/download/download.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { CashComponent } from './views/cash/cash.component';
 import { MatTabsModule } from '@angular/material/tabs';
+// import { NgxMercadopagoModule } from 'ngx-mercadopago';
 
 @NgModule({
   declarations: [
@@ -52,10 +53,14 @@ import { MatTabsModule } from '@angular/material/tabs';
     RulesComponent,
     ClassesComponent,
     DownloadComponent,
-    CashComponent
+    CashComponent,
   ],
   imports: [
     BrowserModule,
+  //   NgxMercadopagoModule.forRoot({
+  //     publishKey: 'APP_USR-c0dcd4e7-1df9-44cc-8d90-ad9419d8a407',
+  //     pathSDK: 'https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js'
+  // }),
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -74,7 +79,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     IvyCarouselModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [{ provide: Window, useValue: window }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
