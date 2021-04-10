@@ -105,4 +105,11 @@ export class RegisterComponent implements OnInit {
     e.preventDefault()
     this.router.navigate(['/login'])
   }
+  
+  alphanumeric(e: any): void {
+    let letterNumber = /^[0-9a-z]+$/;
+
+    if (!e.key.match(letterNumber) && !(e.key == 'Backspace')  && !(e.key == 'Tab'))
+      e.preventDefault()
+  }
 }

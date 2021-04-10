@@ -5,7 +5,7 @@
       <mat-form-field class="form-field">
         <mat-label>Usuário</mat-label>
         <input formControlName="nameFormControl" matInput type="text" minLength="4" maxlength="10" placeholder="nome"
-          [(ngModel)]="player.name" required>
+          [(ngModel)]="player.name" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
@@ -17,13 +17,13 @@
       <mat-form-field class="form-field">
         <mat-label>Senha</mat-label>
         <input formControlName="passwordFormControl" matInput type="password" minlength="4" maxlength="10" placeholder="senha"
-          [(ngModel)]="player.passwd" required>
+          [(ngModel)]="player.passwd" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
 
       <mat-form-field class="form-field">
         <mat-label>Confirmar Senha</mat-label>
         <input formControlName="confirmPasswordFormControl" matInput type="password" minlength="4" maxlength="10"
-          placeholder="confirmar senha" [(ngModel)]="confirmPassword" required>
+          placeholder="confirmar senha" [(ngModel)]="confirmPassword" (keydown)="alphanumeric($event)" required>
       </mat-form-field>
 
       <div class="checkbox">
