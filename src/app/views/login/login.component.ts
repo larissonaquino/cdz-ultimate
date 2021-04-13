@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/'])
     }, error => {
       if (error.status === 401) this.userService.showMessage('Usuário ou senha incorretos', 'ERRO', 'error')
+      if (error.status === 500) this.userService.showMessage('Desculpe, houve um erro ao tentar logar, por favor tente mais tarde', 'ERRO', 'error')
     })
   }
 

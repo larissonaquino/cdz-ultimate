@@ -16,7 +16,7 @@ export class UserService {
 
   showMessage(msg: string, action: string, type: string): void {
     this.snackBar.open(msg, action, {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: [`msg-${type}`]
