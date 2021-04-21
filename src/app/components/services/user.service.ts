@@ -38,7 +38,15 @@ export class UserService {
         Authorization: `Bearer ${token}`
       })
     }
-
     return this.http.post<any>(`${this.baseUrl}/authorization`, null, httpOptions)
+  }
+
+  changePassword(player: Player, newPass: string): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.post<any>(`${this.baseUrl}/changePassword`, {...player, newPass}, httpOptions)
   }
 }
